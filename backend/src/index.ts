@@ -1,13 +1,10 @@
 import express from "express";
+import router from "./router";
 
 const PORT = 8000;
 const app = express();
 
-app.get("/ping", (_req, res) => {
-  res.json({
-    timestamp: new Date().toISOString(),
-  });
-});
+app.use(router);
 
 app.listen(PORT, () => {
   console.log(`Express server listening at PORT ${PORT}`);
